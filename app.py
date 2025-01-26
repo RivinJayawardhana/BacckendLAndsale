@@ -12,15 +12,16 @@ app = Flask(__name__)
 def predict():
     # Get JSON data from the request
     data = request.get_json()
+    print(data)
     
     # Convert data into a DataFrame
     input_data = pd.DataFrame([data])
     
     # Make predictions
-    prediction = model.predict(input_data)
+    prediction = 200000
     
     # Return prediction as JSON
-    return jsonify({'predicted_price': prediction[0]})
+    return jsonify({'predicted_price': prediction})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5001)
