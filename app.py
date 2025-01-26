@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 
 # Load the saved model
-model = joblib.load("price_prediction_model.pkl")
+model = joblib.load("house_price_model.pkl")
 
 # Initialize Flask app
 app = Flask(__name__)
