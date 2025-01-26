@@ -1,12 +1,16 @@
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
+from flask_cors import CORS  # Import flask_cors
 
 # Load the saved model
 model = joblib.load("house_price_model.pkl")
 
 # Initialize Flask app
 app = Flask(__name__)
+
+# Apply CORS to the Flask app
+CORS(app)
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -18,7 +22,7 @@ def predict():
     input_data = pd.DataFrame([data])
     
     # Make predictions
-    prediction = 200000
+    prediction = 200000  # Placeholder, replace with model prediction
     
     # Return prediction as JSON
     return jsonify({'predicted_price': prediction})
