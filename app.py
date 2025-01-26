@@ -16,7 +16,7 @@ CORS(app)
 def predict():
     # Get JSON data from the request
     data = request.get_json()
-    print(data)
+    print("Received data:", data)
     
     # Convert data into a DataFrame
     input_data = pd.DataFrame([data])
